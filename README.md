@@ -33,10 +33,10 @@ Full Stack AI & Data Science — PROJECT 02
 ## Final Model
 
 * **Pipeline:** `TfidfVectorizer()` + `LogisticRegression()`
-* **Test Accuracy:** 0.9872
-* **Test Precision:** 0.9870
-* **Test Recall:** 0.9874
-* **Test F1-Score:** 0.9872
+* **Test Accuracy:** 0.9930
+* **Test Precision:** 0.9930
+* **Test Recall:** 0.9900
+* **Test F1-Score:** 0.9914
 
 ### Why this model?
 
