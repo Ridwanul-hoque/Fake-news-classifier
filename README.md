@@ -18,9 +18,6 @@ This project applies machine learning techniques to classify news articles as **
 - **TF-IDF Vectorizer (`TfidfVectorizer`):** Converts raw text strings into numerical feature matrices by scoring term frequency adjusted for inverse document frequency across the corpus.
 - **Pipeline Vectorization:** Integrated directly into the scikit-learn `Pipeline` object so that raw article text is automatically transformed without requiring separate vectorization steps prior to inference.
 
-Prepared by Kawchar Husain | Full Stack AI & Data Science — Page 4 of 7
-
-```
 
 ---
 
@@ -29,7 +26,6 @@ Full Stack AI & Data Science — PROJECT 02
 ## Cross-Validation Model Comparison
 
 | Pipeline | CV Accuracy | CV Macro F1 |
-| --- | --- | --- |
 | CountVectorizer + MultinomialNB | 0.9520 ± 0.0031 | 0.9515 ± 0.0032 |
 | TF-IDF + MultinomialNB | 0.9385 ± 0.0040 | 0.9379 ± 0.0041 |
 | **TF-IDF + Logistic Regression** | **0.9865 ± 0.0018** | **0.9863 ± 0.0019** |
@@ -44,15 +40,7 @@ Full Stack AI & Data Science — PROJECT 02
 
 ### Why this model?
 
-The **TF-IDF + Logistic Regression** pipeline achieved the highest mean accuracy and F1-score across 5-fold cross-validation while exhibiting the lowest standard deviation (highest stability). `LogisticRegression` handles high-dimensional, sparse feature matrices produced by `TfidfVectorizer` exceptionally well without overfitting, outperforming `MultinomialNB` baselines on subtle contextual cues.
-
-## Web Application
-
-The interface is built with Gradio and can be run locally or embedded directly inside a Jupyter/Kaggle notebook environment.
-
-**Optional live app:** [Hosted Link / Kaggle Notebook Link]
-
-### Screenshots
+The TF-IDF + Logistic Regression** pipeline achieved the highest mean accuracy and F1-score across 5-fold cross-validation while exhibiting the lowest standard deviation (highest stability). `LogisticRegression` handles high-dimensional, sparse feature matrices produced by `TfidfVectorizer` exceptionally well without overfitting, outperforming `MultinomialNB` baselines on subtle contextual cues.
 
 ## Installation
 
