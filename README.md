@@ -49,39 +49,10 @@ git clone [(https://github.com/Ridwanul-hoque/Fake-news-classifier/tree/main)]ht
 cd fake-news-classifier
 pip install -r requirements.txt
 
-```
-
-## Usage
-
-Run the web app locally:
-
-```bash
-python app.py
-
-```
-
-## Project Structure
-
-```text
-fake-news-classifier/
-│-- data/
-│   └── fake_and_real_news.csv
-│-- notebooks/
-│   ├── 1_eda.ipynb
-│   └── 2_training.ipynb
-│-- app.py
-│-- models/
-│   └── best_model.pkl
-│-- screenshots/
-│   └── gradio_interface.png
-│-- README.md
-└── requirements.txt
-
-```
+````
 
 ## Technologies Used
 
 * **Python**
 * **Machine Learning & Feature Extraction:** Scikit-learn (`TfidfVectorizer`, `LogisticRegression`, `MultinomialNB`, `CountVectorizer`)
 * **Data Processing & Visualization:** Pandas, NumPy, Matplotlib, Seaborn
-* **Deployment & UI:** Gradio, Joblib
