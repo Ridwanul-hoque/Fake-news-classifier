@@ -1,7 +1,7 @@
 # Fake News Classification & Gradio Application
 
 ## Overview
-This project builds, evaluates, and deploys a machine learning model designed to classify news articles as **Real** or **Fake**. Using natural language processing (NLP) techniques and scikit-learn, various model pipelines were trained and evaluated via cross-validation to find the optimal balance between performance and stability. The final trained pipeline is integrated into an interactive web interface built with Gradio for real-time predictions.
+This project applies machine learning techniques to classify news articles as **Real** or **Fake**. Using `TfidfVectorizer` for text feature extraction and scikit-learn classification algorithms (`LogisticRegression`, `MultinomialNB`), model pipelines were trained and evaluated via 5-fold cross-validation to find the optimal balance between accuracy and stability. The final trained `TfidfVectorizer` + `LogisticRegression` pipeline is integrated into an interactive web application built with Gradio for real-time predictions.
 
 ## Dataset
 - **Input:** Text (News Article Content / Headlines)
@@ -15,8 +15,10 @@ This project builds, evaluates, and deploys a machine learning model designed to
 - **Length Distribution:** Word count distributions across classes show slight variations, but text structure and vocabulary choice serve as significantly stronger predictive signals than document length alone.
 
 ## Text Representation
-- **TF-IDF Vectorizer (`TfidfVectorizer`):** Converts raw text into numerical feature vectors by scoring word frequency adjusted for document rarity across the corpus.
-- **Preprocessing:** Built directly into the scikit-learn pipeline to automatically handle tokenization, lowercasing, and term weighting without manual data transformations during inference.
+- **TF-IDF Vectorizer (`TfidfVectorizer`):** Converts raw text strings into numerical feature matrices by scoring term frequency adjusted for inverse document frequency across the corpus.
+- **Pipeline Vectorization:** Integrated directly into the scikit-learn `Pipeline` object so that raw article text is automatically transformed without requiring separate vectorization steps prior to inference.
+
+Prepared by Kawchar Husain | Full Stack AI & Data Science — Page 4 of 7
 
 ```
 
@@ -42,20 +44,20 @@ Full Stack AI & Data Science — PROJECT 02
 
 ### Why this model?
 
-The **TF-IDF + Logistic Regression** pipeline achieved the highest mean accuracy and F1-score across 5-fold cross-validation while exhibiting the lowest standard deviation (highest stability). Logistic Regression handles high-dimensional, sparse TF-IDF feature matrices exceptionally well without overfitting, outperforming naive Bayes baselines on subtle contextual cues.
+The **TF-IDF + Logistic Regression** pipeline achieved the highest mean accuracy and F1-score across 5-fold cross-validation while exhibiting the lowest standard deviation (highest stability). `LogisticRegression` handles high-dimensional, sparse feature matrices produced by `TfidfVectorizer` exceptionally well without overfitting, outperforming `MultinomialNB` baselines on subtle contextual cues.
 
 ## Web Application
 
-The interface is built with Gradio and can be run locally or embedded inside a Jupyter/Kaggle notebook environment.
+The interface is built with Gradio and can be run locally or embedded directly inside a Jupyter/Kaggle notebook environment.
 
-**Optional live app:** [Hosted Hugging Face Space / Local Link]
+**Optional live app:** [Hosted Link / Kaggle Notebook Link]
 
 ### Screenshots
 
 ## Installation
 
 ```bash
-git clone [https://github.com/kawchar-husain/fake-news-classifier.git](https://github.com/kawchar-husain/fake-news-classifier.git)
+git clone [(https://github.com/Ridwanul-hoque/Fake-news-classifier/tree/main)]https://github.com/Ridwanul-hoque/Fake-news-classifier/tree/main
 cd fake-news-classifier
 pip install -r requirements.txt
 
@@ -91,8 +93,7 @@ fake-news-classifier/
 
 ## Technologies Used
 
-* Python
-* Pandas, NumPy, Matplotlib, Seaborn
-* Scikit-learn
-* Gradio
-* Joblib
+* **Python**
+* **Machine Learning & Feature Extraction:** Scikit-learn (`TfidfVectorizer`, `LogisticRegression`, `MultinomialNB`, `CountVectorizer`)
+* **Data Processing & Visualization:** Pandas, NumPy, Matplotlib, Seaborn
+* **Deployment & UI:** Gradio, Joblib
